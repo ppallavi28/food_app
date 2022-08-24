@@ -27,9 +27,9 @@ public class FoodProductController {
 	public ResponseEntity<ResponseStructure<FoodProduct>> saveFoodProduct(@RequestBody FoodProduct foodProduct, @PathVariable(value = "menuId") Integer menuId) {
 		return service.saveFoodProduct(foodProduct, menuId);
 	}
-	@PutMapping("/updateFoodProduct")
-	public ResponseEntity<ResponseStructure<FoodProduct>> updateFoodProduct(@RequestBody FoodProduct foodProduct,@RequestParam int id) {
-		return service.updateFoodProduct(foodProduct,id);
+	@PutMapping("/updateFoodProduct/{menuId}")
+	public ResponseEntity<ResponseStructure<FoodProduct>> updateFoodProduct(@RequestBody FoodProduct foodProduct,@RequestParam int id, @PathVariable(value = "menuId") Integer menuId) {
+		return service.updateFoodProduct(foodProduct,id, menuId);
 	}
 	
 	@DeleteMapping("/deleteFoodProduct")

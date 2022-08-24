@@ -27,9 +27,9 @@ public class MenuController {
 	public ResponseEntity<ResponseStructure<Menu>> saveMenu(@RequestBody Menu menu, @PathVariable(value = "branchManagerId") Integer branchManagerId) {
 		return service.saveMenu(menu, branchManagerId);
 	}
-	@PutMapping("/updateMenu")
-	public ResponseEntity<ResponseStructure<Menu>> updateMenu(@RequestBody Menu menu,@RequestParam int id) {
-		return service.updateMenu(menu,id);
+	@PutMapping("/updateMenu/{branchManagerId}")
+	public ResponseEntity<ResponseStructure<Menu>> updateMenu(@RequestBody Menu menu,@RequestParam int id, @PathVariable(value = "branchManagerId") Integer branchManagerId) {
+		return service.updateMenu(menu,id, branchManagerId);
 	}
 	
 	@DeleteMapping("/deleteMenu")

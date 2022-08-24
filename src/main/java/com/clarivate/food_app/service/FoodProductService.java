@@ -27,8 +27,8 @@ public class FoodProductService {
 		return new ResponseEntity<ResponseStructure<FoodProduct>>(structure, HttpStatus.CREATED);
 	}
 
-	public ResponseEntity<ResponseStructure<FoodProduct>> updateFoodProduct(FoodProduct foodProduct, int id) {
-		FoodProduct foodProduct2 = dao.updateFoodProduct(foodProduct, id);
+	public ResponseEntity<ResponseStructure<FoodProduct>> updateFoodProduct(FoodProduct foodProduct, int id, int menuId) {
+		FoodProduct foodProduct2 = dao.updateFoodProduct(foodProduct, id, menuId);
 		ResponseStructure<FoodProduct> structure = new ResponseStructure<FoodProduct>();
 
 		if(foodProduct2 != null) {

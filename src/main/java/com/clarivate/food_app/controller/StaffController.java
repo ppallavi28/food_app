@@ -27,9 +27,9 @@ public class StaffController {
 	public ResponseEntity<ResponseStructure<Staff>> saveStaff(@RequestBody Staff staff, @PathVariable(value = "branchmanagerId") Integer branchmanagerId) {
 		return service.saveStaff(staff, branchmanagerId);
 	}
-	@PutMapping("/updateStaff")
-	public ResponseEntity<ResponseStructure<Staff>> updateStaff(@RequestBody Staff Staff,@RequestParam int id) {
-		return service.updateStaff(Staff,id);
+	@PutMapping("/updateStaff/{branchmanagerId}")
+	public ResponseEntity<ResponseStructure<Staff>> updateStaff(@RequestBody Staff Staff,@RequestParam int id, @PathVariable(value = "branchmanagerId") Integer branchmanagerId) {
+		return service.updateStaff(Staff, id, branchmanagerId);
 	}
 	
 	@DeleteMapping("/deleteStaff")

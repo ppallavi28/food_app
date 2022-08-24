@@ -27,9 +27,9 @@ public class OrderItemDetailController {
 	public ResponseEntity<ResponseStructure<OrderItemDetail>> saveOrderItemDetail(@RequestBody OrderItemDetail orderItemDetail, @PathVariable(value = "foodproductId") Integer foodproductId, @PathVariable(value = "foodorderId") Integer foodorderId) {
 		return service.saveOrderItemDetail(orderItemDetail, foodproductId, foodorderId);
 	}
-	@PutMapping("/updateOrderItemDetail")
-	public ResponseEntity<ResponseStructure<OrderItemDetail>> updateOrderItemDetail(@RequestBody OrderItemDetail orderItemDetail,@RequestParam int id) {
-		return service.updateOrderItemDetail(orderItemDetail,id);
+	@PutMapping("/updateOrderItemDetail/foodproduct/{foodproductId}/foodorder/{foodorderId}")
+	public ResponseEntity<ResponseStructure<OrderItemDetail>> updateOrderItemDetail(@RequestBody OrderItemDetail orderItemDetail,@RequestParam int id, @PathVariable(value = "foodproductId") Integer foodproductId, @PathVariable(value = "foodorderId") Integer foodorderId) {
+		return service.updateOrderItemDetail(orderItemDetail,id, foodproductId, foodorderId);
 	}
 	
 	@DeleteMapping("/deleteOrderItemDetail")
@@ -40,6 +40,11 @@ public class OrderItemDetailController {
 	@GetMapping("/getOrderItemDetailbyid/{id}")
 	public ResponseEntity<ResponseStructure<OrderItemDetail>>  getOrderItemDetailById(@PathVariable int id) {
 		return service.getOrderItemDetailById(id);
+	}
+	
+	@GetMapping("/getBill/{foodorderid}")
+	public String  getBill(@PathVariable int foodorderid) {
+		return service.getBill(foodorderid);
 	}
 	
 	@GetMapping("/findallOrderItemDetail")

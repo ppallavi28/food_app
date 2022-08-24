@@ -28,9 +28,9 @@ public class BranchManagerController {
 		return service.saveBranchManager(branchManager, branchId);
 	}
 	
-	@PutMapping("/updateBranchManager")
-	public ResponseEntity<ResponseStructure<BranchManager>> updateBranchManager(@RequestBody BranchManager branchManager,@RequestParam int id) {
-		return service.updateBranchManager(branchManager,id);
+	@PutMapping("/updateBranchManager/{branchId}")
+	public ResponseEntity<ResponseStructure<BranchManager>> updateBranchManager(@RequestBody BranchManager branchManager,@RequestParam int id, @PathVariable(value = "branchId") Integer branchId) {
+		return service.updateBranchManager(branchManager,id, branchId);
 	}
 	
 	@DeleteMapping("/deleteBranchManager")

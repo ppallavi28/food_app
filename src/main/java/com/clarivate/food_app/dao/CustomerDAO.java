@@ -27,11 +27,13 @@ public class CustomerDAO {
 	}
 
 	//update
-	public Customer updateCustomer(Customer customer, int id) {
+	public Customer updateCustomer(Customer customer, int id, int staffId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			Staff staff = staffRepository.findById(staffId).orElse(null);
+			customer.setStaff(staff);
 			customer.setId(id);
 			return repository.save(customer);
 		}

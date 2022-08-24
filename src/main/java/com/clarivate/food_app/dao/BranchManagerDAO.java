@@ -26,11 +26,13 @@ public class BranchManagerDAO {
 		return repository.save(branchManager);
 	}
 	//update
-	public BranchManager updateBranchManager(BranchManager branchManager, int id) {
+	public BranchManager updateBranchManager(BranchManager branchManager, int id, int branchId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			Branch branch = branchRepository.findById(branchId).orElse(null);
+			branchManager.setBranch(branch);
 			branchManager.setBm_id(id);
 			return repository.save(branchManager);
 		}

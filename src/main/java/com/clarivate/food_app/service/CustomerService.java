@@ -27,8 +27,8 @@ public class CustomerService {
 		return new ResponseEntity<ResponseStructure<Customer>>(structure, HttpStatus.CREATED);
 	}
 
-	public ResponseEntity<ResponseStructure<Customer>> updateCustomer(Customer customer, int id) {
-		Customer customer2 = dao.updateCustomer(customer, id);
+	public ResponseEntity<ResponseStructure<Customer>> updateCustomer(Customer customer, int id, int staffId) {
+		Customer customer2 = dao.updateCustomer(customer, id, staffId);
 		ResponseStructure<Customer> structure = new ResponseStructure<Customer>();
 
 		if(customer2 != null) {

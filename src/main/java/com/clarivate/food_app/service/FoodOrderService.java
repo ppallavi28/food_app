@@ -27,8 +27,8 @@ public class FoodOrderService {
 		return new ResponseEntity<ResponseStructure<FoodOrder>>(structure, HttpStatus.CREATED);
 	}
 
-	public ResponseEntity<ResponseStructure<FoodOrder>> updateFoodOrder(FoodOrder foodOrder, int id) {
-		FoodOrder foodOrder2 = dao.updateFoodOrder(foodOrder, id);
+	public ResponseEntity<ResponseStructure<FoodOrder>> updateFoodOrder(FoodOrder foodOrder, int id, int customerId) {
+		FoodOrder foodOrder2 = dao.updateFoodOrder(foodOrder, id, customerId);
 		ResponseStructure<FoodOrder> structure = new ResponseStructure<FoodOrder>();
 
 		if(foodOrder2 != null) {

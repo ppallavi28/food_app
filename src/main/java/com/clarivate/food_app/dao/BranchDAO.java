@@ -27,11 +27,14 @@ public class BranchDAO {
 	}
 
 	//update
-	public Branch updateBranch(Branch branch, int id) {
+	public Branch updateBranch(Branch branch, int id, int adminId) {
+		
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			Admin admin = adminRepository.findById(adminId).orElse(null);
+			branch.setAdmin(admin);
 			branch.setBranch_id(id);
 			return repository.save(branch);
 		}

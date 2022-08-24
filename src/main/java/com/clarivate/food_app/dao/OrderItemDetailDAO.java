@@ -36,11 +36,16 @@ public class OrderItemDetailDAO {
 	}
 
 	//update
-	public OrderItemDetail updateOrderItemDetail(OrderItemDetail orderItemDetail, int id) {
+	public OrderItemDetail updateOrderItemDetail(OrderItemDetail orderItemDetail, int id, int foodProductId, int foodOrderId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			FoodProduct foodProduct = foodPRoductRepository.findById(foodProductId).orElse(null);
+			FoodOrder foodOrder = foodOrderRepository.findById(foodOrderId).orElse(null);
+
+			orderItemDetail.setFoodProduct(foodProduct);
+			orderItemDetail.setFoodOrder(foodOrder);
 			orderItemDetail.setOrderItem_id(id);
 			return repository.save(orderItemDetail);
 		}
@@ -56,6 +61,10 @@ public class OrderItemDetailDAO {
 	//Get OrderItemDetail details by id
 	public Optional<OrderItemDetail> getOrderItemDetailById(int id) {
 		return repository.findById(id);
+	}
+	
+	public String getBill(String bill) {
+		return OrderItemDetailsRepository.getBillDetail(bill);
 	}
 
 	//get all OrderItemDetail details

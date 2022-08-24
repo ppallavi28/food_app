@@ -27,8 +27,8 @@ public class BranchService {
 		return new ResponseEntity<ResponseStructure<Branch>>(structure, HttpStatus.CREATED);
 	}
 
-	public ResponseEntity<ResponseStructure<Branch>> updateBranch(Branch branch, int id) {
-		Branch branch2 = dao.updateBranch(branch, id);
+	public ResponseEntity<ResponseStructure<Branch>> updateBranch(Branch branch, int id, int adminId) {
+		Branch branch2 = dao.updateBranch(branch, id, adminId);
 		ResponseStructure<Branch> structure = new ResponseStructure<Branch>();
 
 		if(branch2 != null) {

@@ -30,11 +30,14 @@ public class StaffService {
 		return new ResponseEntity<ResponseStructure<Staff>>(structure, HttpStatus.CREATED);
 	}
 
-	public ResponseEntity<ResponseStructure<Staff>> updateStaff(Staff staff, int id) {
-		Staff staff2 = dao.updateStaff(staff, id);
+	public ResponseEntity<ResponseStructure<Staff>> updateStaff(Staff staff, int id, int branchmanagerId) {
+		String passwordEncrypt = AES.encrypt(staff.getPassword(), "pass");
+		staff.setPassword(passwordEncrypt);
+		Staff staff2 = dao.updateStaff(staff, id, branchmanagerId);
 		ResponseStructure<Staff> structure = new ResponseStructure<Staff>();
 
 		if(staff2 != null) {
+			
 			structure.setMessage("Staff updated successfully");
 			structure.setStatus(HttpStatus.OK.value());
 			structure.setT(staff2);

@@ -27,11 +27,13 @@ public class FoodProductDAO {
 		return repository.save(foodProduct);
 	}
 	//update
-	public FoodProduct updateFoodProduct(FoodProduct foodProduct, int id) {
+	public FoodProduct updateFoodProduct(FoodProduct foodProduct, int id, int menuId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			Menu menu = menuRepository.findById(id).orElse(null);
+			foodProduct.setMenu(menu);
 			foodProduct.setFood_id(id);
 			return repository.save(foodProduct);
 		}

@@ -27,11 +27,13 @@ public class MenuDAO {
 	}
 
 	//update
-	public Menu updateMenu(Menu menu, int id) {
+	public Menu updateMenu(Menu menu, int id, int branchManagerId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			BranchManager branchManager = branchManagerRepository.findById(id).orElse(null);
+			menu.setBranchManager(branchManager);
 			menu.setMenu_id(id);
 			return repository.save(menu);
 		}

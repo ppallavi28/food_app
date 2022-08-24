@@ -30,11 +30,15 @@ public class BranchManagerService {
 		return new ResponseEntity<ResponseStructure<BranchManager>>(structure, HttpStatus.CREATED);
 	}
 	
-	public ResponseEntity<ResponseStructure<BranchManager>> updateBranchManager(BranchManager branchManager, int id) {
-		BranchManager branchManager2 = dao.updateBranchManager(branchManager, id);
+	public ResponseEntity<ResponseStructure<BranchManager>> updateBranchManager(BranchManager branchManager, int id, int branchId) {
+		String passwordEncrypt = AES.encrypt(branchManager.getPassword(), "pass");
+		branchManager.setPassword(passwordEncrypt);
+		BranchManager branchManager2 = dao.updateBranchManager(branchManager, id, branchId);
+		
 		ResponseStructure<BranchManager> structure = new ResponseStructure<BranchManager>();
 
 		if(branchManager2 != null) {
+			
 			structure.setMessage("BranchManager updated successfully");
 			structure.setStatus(HttpStatus.OK.value());
 			structure.setT(branchManager2);

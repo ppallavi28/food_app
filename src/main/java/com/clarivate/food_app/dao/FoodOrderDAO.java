@@ -22,16 +22,18 @@ public class FoodOrderDAO {
 
 	public FoodOrder saveFoodOrder(FoodOrder foodOrder, int id) {
 		Customer customer = customerRepository.findById(id).orElse(null);
-		foodOrder.setCustomer(customer);;
+		foodOrder.setCustomer(customer);
 		return repository.save(foodOrder);
 	}
 
 	//update
-	public FoodOrder updateFoodOrder(FoodOrder foodOrder, int id) {
+	public FoodOrder updateFoodOrder(FoodOrder foodOrder, int id, int customerId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			Customer customer = customerRepository.findById(id).orElse(null);
+			foodOrder.setCustomer(customer);
 			foodOrder.setFoodOrder_id(id);
 			return repository.save(foodOrder);
 		}

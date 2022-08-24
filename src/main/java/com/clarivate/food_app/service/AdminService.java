@@ -33,9 +33,12 @@ public class AdminService {
 
 	public ResponseEntity<ResponseStructure<Admin>> updateAdmin(Admin admin, int id) {
 		Admin admin2 = dao.updateAdmin(admin, id);
+		
 		ResponseStructure<Admin> structure = new ResponseStructure<Admin>();
-
+		
 		if(admin2 != null) {
+			String passwordEncrypt = AES.encrypt(admin2.getPassword(), "pass");
+			admin2.setPassword(passwordEncrypt);
 			structure.setMessage("Admin updated successfully");
 			structure.setStatus(HttpStatus.OK.value());
 			structure.setT(admin2);

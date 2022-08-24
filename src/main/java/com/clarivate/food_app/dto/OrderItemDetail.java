@@ -1,6 +1,8 @@
 package com.clarivate.food_app.dto;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,12 +19,12 @@ public class OrderItemDetail {
 	private int orderItem_id;
 	private int item_quantity;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "food_id")
 	@JsonIgnore
 	private FoodProduct foodProduct;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "foodOrder_id")
 	@JsonIgnore
 	private FoodOrder foodOrder;

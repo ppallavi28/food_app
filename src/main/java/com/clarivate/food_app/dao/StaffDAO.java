@@ -26,11 +26,13 @@ public class StaffDAO {
 		return repository.save(staff);
 	}
 	//update
-	public Staff updateStaff(Staff staff, int id) {
+	public Staff updateStaff(Staff staff, int id, int branchmanagerId) {
 		if(repository.findById(id).isEmpty()) {
 			return null;
 		}
 		else {
+			BranchManager branchManager = branchManagerRepository.findById(id).orElse(null);
+			staff.setBranchManager(branchManager);
 			staff.setStaff_id(id);
 			return repository.save(staff);
 		}

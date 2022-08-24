@@ -27,9 +27,9 @@ public class CustomerController {
 	public ResponseEntity<ResponseStructure<Customer>> saveCustomer(@RequestBody Customer customer, @PathVariable(value = "staffId") Integer staffId) {
 		return service.saveCustomer(customer, staffId);
 	}
-	@PutMapping("/updateCustomer")
-	public ResponseEntity<ResponseStructure<Customer>> updateCustomer(@RequestBody Customer customer,@RequestParam int id) {
-		return service.updateCustomer(customer,id);
+	@PutMapping("/updateCustomer/{staffId}")
+	public ResponseEntity<ResponseStructure<Customer>> updateCustomer(@RequestBody Customer customer,@RequestParam int id, @PathVariable(value = "staffId") Integer staffId) {
+		return service.updateCustomer(customer,id, staffId);
 	}
 	
 	@DeleteMapping("/deleteCustomer")
