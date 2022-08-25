@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,31 +19,32 @@ import com.clarivate.food_app.service.StaffService;
 import com.clarivate.food_app.util.ResponseStructure;
 
 @RestController
+@RequestMapping("/api")
 public class StaffController {
 
 	@Autowired
 	StaffService service;
 	
-	@PostMapping("/savestaff/{branchmanagerId}")
+	@PostMapping("/staff/{branchmanagerId}")
 	public ResponseEntity<ResponseStructure<Staff>> saveStaff(@RequestBody Staff staff, @PathVariable(value = "branchmanagerId") Integer branchmanagerId) {
 		return service.saveStaff(staff, branchmanagerId);
 	}
-	@PutMapping("/updateStaff/{branchmanagerId}")
+	@PutMapping("/staff/{branchmanagerId}")
 	public ResponseEntity<ResponseStructure<Staff>> updateStaff(@RequestBody Staff Staff,@RequestParam int id, @PathVariable(value = "branchmanagerId") Integer branchmanagerId) {
 		return service.updateStaff(Staff, id, branchmanagerId);
 	}
 	
-	@DeleteMapping("/deleteStaff")
+	@DeleteMapping("/staff")
 	public ResponseEntity<ResponseStructure<Staff>>  deleteStaff(@RequestParam int id) {
 		return service.deleteStaff(id);
 	}
 	
-	@GetMapping("/getStaffbyid/{id}")
+	@GetMapping("/staff/{id}")
 	public ResponseEntity<ResponseStructure<Staff>>  getStaffById(@PathVariable int id) {
 		return service.getStaffById(id);
 	}
 	
-	@GetMapping("/findallStaff")
+	@GetMapping("/staff")
 	public ResponseEntity<ResponseStructure<List<Staff>>> findAllStaff(){
 		return service.findAllStaff();
 	}
