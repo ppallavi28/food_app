@@ -1,0 +1,12 @@
+<div class="container">
+    <h3>New Food Order Registration</h3>
+      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="order_name">Order Name</label>
+          <input type="text" class="form-control" id="order_name" aria-describedby="emailHelp" name="order_name" formControlName="order_name">
+        </div>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+

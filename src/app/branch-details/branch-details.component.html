@@ -1,0 +1,28 @@
+<div class="container">
+    <h3 class="details-heading">Branch Details</h3>
+    <div class="add-button-margin">
+        <div><button class="btn btn-primary" type="button" (click)="addBranch()">Add Branch</button>
+        <span style="float: right;"><button class="btn btn-primary" type="button" (click)="back()">Back</button></span></div>
+    </div>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Branch ID</th>
+            <th scope="col">Branch Name</th>
+            <th scope="col">Branch address</th>
+            <th scope="col">Edit Branch</th>
+            <th scope="col">Delete Branch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of result">
+            <td>{{r.branch_id}}</td>
+            <td>{{r.branch_name}}</td>
+            <td>{{r.address}}</td>
+            <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-branch/',r.branch_id]">Update</button></td>
+            <td><button class="btn btn-danger" type="button" (click)="deleteBranch(r.branch_id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

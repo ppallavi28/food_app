@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>New Staff Registration</h3>
+      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="staff_name">Staff Name</label>
+          <input type="text" class="form-control" id="staff_name" aria-describedby="emailHelp" name="staff_name" formControlName="staff_name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" formControlName="password">
+        </div>
+          <div class="form-group">
+            <label for="bm_id">Branch Manager ID</label>
+            <input type="text" class="form-control" id="bm_id" aria-describedby="emailHelp" name="bm_id" formControlName="bm_id">
+          </div>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+

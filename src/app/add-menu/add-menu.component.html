@@ -1,0 +1,16 @@
+<div class="container">
+    <h3>New Menu Registration</h3>
+      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="menu_name">Menu Name</label>
+          <input type="text" class="form-control" id="menu_name" aria-describedby="emailHelp" name="menu_name" formControlName="menu_name">
+        </div>
+        <div class="form-group">
+            <label for="bm_id">Branch Manager ID</label>
+            <input type="text" class="form-control" id="bm_id" aria-describedby="emailHelp" name="bm_id" formControlName="bm_id">
+        </div>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+

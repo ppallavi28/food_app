@@ -1,0 +1,36 @@
+<div class="container">
+    <h3 class="details-heading">FoodItem Details</h3>
+    <div class="add-button-margin">
+        <div><button class="btn btn-primary" type="button" (click)="addfooditem()">Add FootItem</button>
+        <span style="float: right;"><button class="btn btn-primary" type="button" (click)="back()">Back</button></span></div>
+    </div>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">FoodItem ID</th>
+            <th scope="col">FoodItem Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Food type</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Edit FoodItem</th>
+            <th scope="col">Delete FoodItem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of result">
+            <td>{{r.food_id}}</td>
+            <td>{{r.food_name}}</td>
+            <td>{{r.price}}</td>
+            <td>{{r.image_name}}</td>
+            <td>{{r.description}}</td>
+            <td>{{r.food_type}}</td>
+            <td>{{r.quantity}}</td>
+            <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-fooditem/',r.food_id]">Update</button></td>
+            <td><button class="btn btn-danger" type="button" (click)="deletefooditem(r.food_id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

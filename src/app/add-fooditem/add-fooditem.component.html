@@ -1,0 +1,36 @@
+<div class="container">
+    <h3>New FoodItem Registration</h3>
+      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="food_name">Food Name</label>
+          <input type="text" class="form-control" id="food_name" aria-describedby="emailHelp" name="food_name" formControlName="food_name">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" aria-describedby="emailHelp" name="price" formControlName="price">
+        </div>
+        <div class="form-group">
+            <label for="image_name">Image Name</label>
+            <input type="text" class="form-control" id="image_name" aria-describedby="emailHelp" name="image_name" formControlName="image_name">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" aria-describedby="emailHelp" name="description" formControlName="description">
+        </div>
+        <div class="form-group">
+            <label for="food_type">Food type</label>
+            <input type="text" class="form-control" id="food_type" aria-describedby="emailHelp" name="food_type" formControlName="food_type">
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" aria-describedby="emailHelp" name="quantity" formControlName="quantity">
+        </div>
+        <div class="form-group">
+            <label for="menu_id">Menu ID</label>
+            <input type="text" class="form-control" id="menu_id" aria-describedby="emailHelp" name="menu_id" formControlName="menu_id">
+        </div>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+

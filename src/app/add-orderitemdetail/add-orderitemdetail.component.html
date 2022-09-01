@@ -1,0 +1,12 @@
+<div class="container">
+    <h3>Add Food Item to Cart</h3>
+      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="item_quantity">Quantity</label>
+          <input type="text" class="form-control" id="item_quantity" aria-describedby="emailHelp" name="item_quantity" formControlName="item_quantity">
+        </div>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+

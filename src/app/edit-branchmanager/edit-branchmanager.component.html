@@ -1,0 +1,24 @@
+<div class="container">
+    <h3 class="details-heading">Update Branch Manager Registration</h3>
+      <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="bm_name">Branch Manager Name</label>
+          <input type="text" class="form-control" id="bm_name" aria-describedby="emailHelp" name="bm_name" formControlName="bm_name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" formControlName="password">
+        </div>
+        <div class="form-group">
+            <label for="branch_id">Branch ID</label>
+            <input type="text" class="form-control" id="branch_id" aria-describedby="emailHelp" name="branch_id" formControlName="branch_id">
+          </div>
+        <button [disabled]="!updateForm?.valid" type="submit" class="btn btn-primary">Update</button>
+      </form>
+</div>
+
+

@@ -1,0 +1,36 @@
+<div class="container">
+    <h3 class="details-heading">Food Bill</h3>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Bill Information</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr><td>Customer Name</td><td>{{result.customer_name}}</td><td></td> </tr>
+           <tr> <td></td> <td>Cart Items</td><td></td></tr>
+           <tr>
+            <td>Food Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+           </tr>
+           <tr *ngFor="let r of result.cartitem">
+            <td>{{r.food_name}}</td>
+            <td>{{r.food_quantity}}</td>
+            <td>{{r.price}}</td>
+           </tr>
+          <tr><td>Total Price</td><td>{{result.amount_without_gst}}</td> <td></td></tr>
+          <tr><td>Total Price with Tax</td><td>{{result.amount_with_gst}}</td> <td></td></tr>
+        </tbody>
+      </table>
+
+      <div class="add-button-margin">
+        <h4 class="details-heading">Thanks For Ordering, E-Bill is sent to Your Email</h4>
+      </div>
+      <div class="add-button-margin">
+        <button class="btn btn-primary" type="button" (click)="back()">Back</button>
+      </div>
+</div>
+

@@ -1,0 +1,21 @@
+<div class="container">
+    <h3 class="details-heading">Admin Profile</h3>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Admin Details</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Admin Name</td><td>{{result.admin_name}}</td></tr>
+          <tr><td>Email</td><td>{{result.email}}</td></tr>
+          <tr><td>Password</td><td>{{result.password}}</td></tr>
+        </tbody>
+      </table>
+</div>
+<div class="container">
+   <button class="btn btn-primary" type="button" [routerLink]="['/edit-admin']">Edit details</button>
+   <button class="btn btn-primary" type="button" (click)="back()" style="float: right;">Back</button> 
+</div>
+

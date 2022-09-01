@@ -1,3 +1,9 @@
+.homeheading{
+    margin: 150px;
+    padding-top: 100px;
+    font-size: 60px;
+}
+
 .hero_area {
     position: relative;
     min-height: 100vh;
