@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../Service/admin.service';
 
@@ -17,9 +17,9 @@ export class EditAdminComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    admin_name: new FormControl("",[]),
-    email: new FormControl("", []),
-    password: new FormControl("", [])
+    admin_name: new FormControl("",[Validators.required]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8)])
   })
 
   get admin_name(){

@@ -10,9 +10,13 @@ import { OrderitemdetailService } from '../Service/orderitemdetail.service';
 export class DisplaybillComponent implements OnInit {
 
   result:any;
-  constructor(private bill:OrderitemdetailService, private route:Router) { }
+  
+  
+  constructor(private bill:OrderitemdetailService, private route:Router) {
+   }
 
   ngOnInit(): void {
+    
     this.bill.getBill(localStorage.getItem('foodOrder_id')).subscribe((res)=>{
       this.result = res;
       console.log(this.result);

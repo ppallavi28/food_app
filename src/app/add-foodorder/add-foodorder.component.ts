@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FoodorderService } from '../Service/foodorder.service';
 
@@ -19,7 +19,7 @@ export class AddFoodorderComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    order_name: new FormControl("",[])
+    order_name: new FormControl("",[Validators.required])
   })
 
   get order_name(){

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="editadmin-div">
     <h3 class="details-heading">Admin Profile Updation</h3>
       <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -16,6 +16,6 @@
           <input type="password" class="form-control" id="password1" name="password" formControlName="password">
           <span *ngIf="password?.invalid && password?.touched" style="color: red;">Please provide valid password</span>
         </div>
-        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-dark">Submit</button>
       </form>
 </div>

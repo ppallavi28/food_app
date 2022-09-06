@@ -15,12 +15,11 @@
         <li class="nav-item active">
             <a class="nav-link"  routerLink="branchmanager-details" href="#">BranchManager</a>
         </li>
-        <li class="nav-item active">
-          <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
-        </li>
       </ul>
+      <button type="button" class="btn btn-warning" (click)="logout()" style="float: right;">Logout</button>
     </div>
 </nav>
-<div class="container">
+<div class="container" id="admin-div">
+    <img [src]="loginImg" alt="no image" id="loginimage">
     <h1 class="homeheading">Admin can access these pages</h1>
 </div>

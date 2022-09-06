@@ -1,15 +1,17 @@
-<div class="container">
-    <h3>New Menu Registration</h3>
+<div class="container" id="addmenu-div">
+    <h2 class="details-heading">New Menu Registration</h2>
       <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="menu_name">Menu Name</label>
           <input type="text" class="form-control" id="menu_name" aria-describedby="emailHelp" name="menu_name" formControlName="menu_name">
+          <span *ngIf="menu_name?.invalid && menu_name?.touched" style="color: red;">Please provide menu name</span>
         </div>
         <div class="form-group">
             <label for="bm_id">Branch Manager ID</label>
             <input type="text" class="form-control" id="bm_id" aria-describedby="emailHelp" name="bm_id" formControlName="bm_id">
+            <span *ngIf="bm_id?.invalid && bm_id?.touched" style="color: red;">Please provide branchmanager id</span>
         </div>
-        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-dark">Submit</button>
       </form>
 </div>
 

@@ -1,23 +1,27 @@
-<div class="container">
-    <h3>New Branch Manager Registration</h3>
+<div class="container" id="addbm-div">
+    <h3 class="details-heading">New Branch Manager Registration</h3>
       <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="branchmanager_name">Branch Manager Name</label>
           <input type="text" class="form-control" id="branchmanager_name" aria-describedby="emailHelp" name="branchmanager_name" formControlName="branchmanager_name">
+          <span *ngIf="branchmanager_name?.invalid && branchmanager_name?.touched" style="color: red;">Please provide branchmanager name</span>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" formControlName="email">
+            <span *ngIf="email?.invalid && email?.touched" style="color: red;">Please provide email</span>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" formControlName="password">
+            <span *ngIf="password?.invalid && password?.touched" style="color: red;">Please provide password</span>
         </div>
           <div class="form-group">
             <label for="branch_id">Branch ID</label>
             <input type="text" class="form-control" id="branch_id" aria-describedby="emailHelp" name="branch_id" formControlName="branch_id">
+            <span *ngIf="branch_id?.invalid && branch_id?.touched" style="color: red;">Please provide branch id</span>
           </div>
-        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-dark">Submit</button>
       </form>
 </div>
 

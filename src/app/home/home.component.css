@@ -1,6 +1,4 @@
 .homeheading{
-    margin: 150px;
-    padding-top: 100px;
     font-size: 60px;
 }
 
@@ -30,3 +28,18 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
+
+  #home-nav{
+    opacity: 0.9;
+    color: black;
+  }
+
+  #foodapptext{
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    left: 200px;
+    text-align: center;
+    color: aliceblue;
+    opacity: 0.6;
+}

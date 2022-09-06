@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerService } from '../Service/customer.service';
 
@@ -19,10 +19,10 @@ export class AddCustomerComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    name: new FormControl("",[]),
-    email: new FormControl("", []),
-    phone_number: new FormControl("",[]),
-    staff_id: new FormControl("", [])
+    name: new FormControl("",[Validators.required]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    phone_number: new FormControl("",[Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+    staff_id: new FormControl("", [Validators.required])
   })
 
   get name(){

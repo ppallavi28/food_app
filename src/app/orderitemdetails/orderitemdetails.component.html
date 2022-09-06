@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 class="details-heading">FoodItem Details</h3>
+    <h2 class="details-heading">FoodItem Details</h2>
     <table class="table">
         <thead class="thead-light">
           <tr>
@@ -12,12 +12,12 @@
           <tr *ngFor="let r of result">
             <td>{{r.food_id}}</td>
             <td>{{r.food_name}}</td>
-            <td><button class="btn btn-primary" type="button" [routerLink]="['/add-orderitemdetail/',r.food_id]">Add item</button></td>
+            <td><button class="btn btn-success" type="button" [routerLink]="['/add-orderitemdetail/',r.food_id]">Add item</button></td>
           </tr>
         </tbody>
       </table>
 </div>
 <div class="container">
-   <button class="btn btn-primary" type="button" [routerLink]="['/displaybill']">Generate Bill</button> 
+   <button class="btn btn-info" type="button" [routerLink]="['/displaybill']">Generate Bill</button> 
 </div>
 

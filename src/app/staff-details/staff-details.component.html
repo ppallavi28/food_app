@@ -1,8 +1,8 @@
 <div class="container">
-    <h3 class="details-heading">Staff Details</h3>
+    <h2 class="details-heading">Staff Details</h2>
     <div class="add-button-margin">
-        <div><button class="btn btn-primary" type="button" (click)="addstaff()">Add Staff</button>
-        <span style="float: right;"><button class="btn btn-primary" type="button" (click)="back()">Back</button></span></div>
+        <div><button class="btn btn-dark" type="button" (click)="addstaff()">Add Staff</button>
+        <span style="float: right;"><button class="btn btn-dark" type="button" (click)="back()">Back</button></span></div>
     </div>
     <table class="table">
         <thead class="thead-light">
@@ -11,7 +11,7 @@
             <th scope="col">Staff Name</th>
             <th scope="col">Email</th>
             <th scope="col">Edit Staff</th>
-            <th scope="col">Delete Staff</th>
+            <!-- <th scope="col">Delete Staff</th> -->
           </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
             <td>{{r.staff_name}}</td>
             <td>{{r.email}}</td>
             <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-staff/',r.staff_id]">Update</button></td>
-            <td><button class="btn btn-danger" type="button" (click)="deletestaff(r.staff_id)">Delete</button></td>
+            <!-- <td><button class="btn btn-danger" type="button" (click)="deletestaff(r.staff_id)">Delete</button></td> -->
           </tr>
         </tbody>
       </table>

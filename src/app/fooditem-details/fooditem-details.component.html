@@ -1,8 +1,8 @@
 <div class="container">
-    <h3 class="details-heading">FoodItem Details</h3>
+    <h2 class="details-heading">FoodItem Details</h2>
     <div class="add-button-margin">
-        <div><button class="btn btn-primary" type="button" (click)="addfooditem()">Add FootItem</button>
-        <span style="float: right;"><button class="btn btn-primary" type="button" (click)="back()">Back</button></span></div>
+        <div><button class="btn btn-dark" type="button" (click)="addfooditem()">Add FootItem</button>
+        <span style="float: right;"><button class="btn btn-dark" type="button" (click)="back()">Back</button></span></div>
     </div>
     <table class="table">
         <thead class="thead-light">
@@ -15,7 +15,7 @@
             <th scope="col">Food type</th>
             <th scope="col">Quantity</th>
             <th scope="col">Edit FoodItem</th>
-            <th scope="col">Delete FoodItem</th>
+            <!-- <th scope="col">Delete FoodItem</th> -->
           </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
             <td>{{r.food_type}}</td>
             <td>{{r.quantity}}</td>
             <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-fooditem/',r.food_id]">Update</button></td>
-            <td><button class="btn btn-danger" type="button" (click)="deletefooditem(r.food_id)">Delete</button></td>
+            <!-- <td><button class="btn btn-danger" type="button" (click)="deletefooditem(r.food_id)">Delete</button></td> -->
           </tr>
         </tbody>
       </table>

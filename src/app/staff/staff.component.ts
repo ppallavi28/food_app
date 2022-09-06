@@ -8,12 +8,16 @@ import { Router } from '@angular/router';
 })
 export class StaffComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  loginImg:String = "";
+  constructor(private route:Router) {
+    this.loginImg = '/assets/images/loginImage.png';
+   }
 
   ngOnInit(): void {
   }
 
   logout(){
+    localStorage.setItem("loggedInRole", "logout");
     this.route.navigateByUrl('/home');
   }
 

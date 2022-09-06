@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../Service/admin.service';
 
@@ -17,9 +17,9 @@ export class RegistrationComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    admin_name: new FormControl("",[]),
-    email: new FormControl("", []),
-    password: new FormControl("", [])
+    admin_name: new FormControl("",[Validators.required]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8)])
   })
 
   get admin_name(){
@@ -37,6 +37,7 @@ export class RegistrationComponent implements OnInit {
       this.res = data;
       this.res = this.res.t;
       console.log("Successful registration of admin");
+      localStorage.setItem("loggedInRole", "Admin");
       localStorage.setItem("admin_id",this.res.admin_id);
       this.router.navigateByUrl('/admin');
     })

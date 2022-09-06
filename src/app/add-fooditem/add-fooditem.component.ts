@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FoodItemService } from '../Service/food-item.service';
 
@@ -18,13 +18,13 @@ export class AddFooditemComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    food_name: new FormControl("",[]),
-    price: new FormControl("",[]),
-    image_name: new FormControl("",[]),
-    description: new FormControl("",[]),
-    food_type: new FormControl("",[]),
-    quantity: new FormControl("",[]),
-    menu_id: new FormControl("", [])
+    food_name: new FormControl("",[Validators.required]),
+    price: new FormControl("",[Validators.required]),
+    image_name: new FormControl("",[Validators.required]),
+    description: new FormControl("",[Validators.required]),
+    food_type: new FormControl("",[Validators.required]),
+    quantity: new FormControl("",[Validators.required]),
+    menu_id: new FormControl("", [Validators.required])
   })
 
   get food_name(){

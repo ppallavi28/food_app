@@ -41,12 +41,15 @@ export class LoginComponent implements OnInit {
       console.log(this.result.success);
       
       if(this.result.role === "Admin" && this.result.success === true){
+        localStorage.setItem("loggedInRole", this.result.role);
         this.route.navigateByUrl('/admin');
       }
       else if(this.result.role === "BranchManager" && this.result.success === true){
+        localStorage.setItem("loggedInRole", this.result.role);
         this.route.navigateByUrl('/branchmanager');
       }
       else if(this.result.role === "Staff" && this.result.success === true){
+        localStorage.setItem("loggedInRole", this.result.role);
         this.route.navigateByUrl('/staff');
       }
       else{

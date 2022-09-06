@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MenuService } from '../Service/menu.service';
 
@@ -18,8 +18,8 @@ export class AddMenuComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    menu_name: new FormControl("",[]),
-    bm_id: new FormControl("", [])
+    menu_name: new FormControl("",[Validators.required]),
+    bm_id: new FormControl("", [Validators.required])
   })
 
   get menu_name(){

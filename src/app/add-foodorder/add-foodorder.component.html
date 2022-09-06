@@ -1,11 +1,12 @@
-<div class="container">
-    <h3>New Food Order Registration</h3>
+<div class="container" id="addfoodorder-div">
+    <h2 class="details-heading">New Food Order Registration</h2>
       <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="order_name">Order Name</label>
           <input type="text" class="form-control" id="order_name" aria-describedby="emailHelp" name="order_name" formControlName="order_name">
+          <span *ngIf="order_name?.invalid && order_name?.touched" style="color: red;">Please provide order name</span>
         </div>
-        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-dark">Submit</button>
       </form>
 </div>
 

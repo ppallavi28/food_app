@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderitemdetailService } from '../Service/orderitemdetail.service';
 
@@ -20,7 +20,7 @@ export class AddOrderitemdetailComponent implements OnInit {
   }
 
   regForm = new FormGroup({
-    item_quantity: new FormControl("", [])
+    item_quantity: new FormControl("", [Validators.required])
   })
 
   get item_quantity(){

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BranchService } from '../Service/branch.service';
 
@@ -20,9 +20,9 @@ export class EditBranchComponent implements OnInit {
   }
 
   updateForm = new FormGroup({
-    branch_name: new FormControl("",[]),
-    address: new FormControl("", []),
-    admin_id: new FormControl("", [])
+    branch_name: new FormControl("",[Validators.required]),
+    address: new FormControl("", [Validators.required]),
+    admin_id: new FormControl("", [Validators.required])
   })
 
   get branch_name(){

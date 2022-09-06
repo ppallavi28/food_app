@@ -1,5 +1,5 @@
-<div class="container">
-    <h3 class="details-heading">Admin Profile</h3>
+<div class="container" id="profile-div">
+    <h2 class="details-heading">Admin Profile</h2>
     <table class="table">
         <thead class="thead-light">
           <tr>
@@ -14,8 +14,8 @@
         </tbody>
       </table>
 </div>
-<div class="container">
-   <button class="btn btn-primary" type="button" [routerLink]="['/edit-admin']">Edit details</button>
-   <button class="btn btn-primary" type="button" (click)="back()" style="float: right;">Back</button> 
+<div class="container" id="profile-button">
+   <button class="btn btn-dark" type="button" [routerLink]="['/edit-admin']">Edit details</button>
+   <button class="btn btn-dark" type="button" (click)="back()" style="float: right;">Back</button> 
 </div>
 

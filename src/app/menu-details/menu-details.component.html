@@ -1,8 +1,8 @@
 <div class="container">
-    <h3 class="details-heading">Menu Details</h3>
+    <h2 class="details-heading">Menu Details</h2>
     <div class="add-button-margin">
-        <div><button class="btn btn-primary" type="button" (click)="addmenu()">Add menu</button>
-        <span style="float: right;"><button class="btn btn-primary" type="button" (click)="back()">Back</button></span></div>
+        <div><button class="btn btn-dark" type="button" (click)="addmenu()">Add menu</button>
+        <span style="float: right;"><button class="btn btn-dark" type="button" (click)="back()">Back</button></span></div>
     </div>
     <table class="table">
         <thead class="thead-light">
@@ -10,7 +10,7 @@
             <th scope="col">Menu ID</th>
             <th scope="col">Menu Name</th>
             <th scope="col">Edit Menu</th>
-            <th scope="col">Delete Menu</th>
+            <!-- <th scope="col">Delete Menu</th> -->
           </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
             <td>{{r.menu_id}}</td>
             <td>{{r.menu_name}}</td>
             <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-menu/',r.menu_id]">Update</button></td>
-            <td><button class="btn btn-danger" type="button" (click)="deletemenu(r.menu_id)">Delete</button></td>
+            <!-- <td><button class="btn btn-danger" type="button" (click)="deletemenu(r.menu_id)">Delete</button></td> -->
           </tr>
         </tbody>
       </table>

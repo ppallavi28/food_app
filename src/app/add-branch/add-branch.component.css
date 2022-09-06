@@ -1,3 +1,9 @@
 .heading-margin{
     margin: 30px 0px;
 }
+
+#addbranch-div{
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-top: 100px;
+}

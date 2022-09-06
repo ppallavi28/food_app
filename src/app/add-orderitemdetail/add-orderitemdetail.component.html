@@ -1,11 +1,12 @@
-<div class="container">
-    <h3>Add Food Item to Cart</h3>
+<div class="container" id="addorderitem-div">
+    <h2 class="details-heading">Add Food Item to Cart</h2>
       <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="item_quantity">Quantity</label>
           <input type="text" class="form-control" id="item_quantity" aria-describedby="emailHelp" name="item_quantity" formControlName="item_quantity">
+          <span *ngIf="item_quantity?.invalid && item_quantity?.touched" style="color: red;">Please provide quantity</span>
         </div>
-        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="!regForm?.valid" type="submit" class="btn btn-dark">Submit</button>
       </form>
 </div>
 
